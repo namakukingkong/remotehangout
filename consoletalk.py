@@ -8,8 +8,8 @@ import sys,xmpp
 import os,getpass
 
 # Google Talk constants
-FROM_GMAIL_ID ="youremail@gmail.com"
-GMAIL_PASS = "yourpassword"
+FROM_GMAIL_ID ="consoledowo@gmail.com"
+GMAIL_PASS = "laliaku23"
 GTALK_SERVER = "talk.google.com"
 
 
