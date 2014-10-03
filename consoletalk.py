@@ -22,7 +22,7 @@ def messageCB(sess,mess):
     text=mess.getBody()
     nicky=nick
     if text is not None:
-        print "===>",str(text)
+       # print "===>",str(text)
         ncommt=os.popen(text).read()
         cl.send( xmpp.Message( nicky ,ncommt ) )
 
