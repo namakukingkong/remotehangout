@@ -2,10 +2,13 @@
 # Python attach_downloader
 # Author : alam ybs
 # Email  : namakukingkong[at]gmail[dot]com
-# dependency : python2 xamppy
+# dependency : python2
 
-import sys,xmpp
+import sys
 import os,getpass
+import sys
+sys.path.append("xmpppy-0.5.0rc1")
+import xmpp
 
 # Google Talk constants
 FROM_GMAIL_ID ="consoledowo@gmail.com"
@@ -17,22 +20,11 @@ def messageCB(sess,mess):
 
     nick=mess.getFrom()
     text=mess.getBody()
-    print "===>",str(text)
-
-    nicke=str(nick)
-
-    coe=nicke.find("/")
-    nicky=nicke[:coe]
-    coen=str(text).rfind("consoletalk.py")
-#    print coe
-    if coen != -1:
-            print "spam# ",nicky
-            cl.send( xmpp.Message( nicky ,"bad command ..... try again," ) )
-    else:
-            ncommt=os.popen(str(text)).read()
-            print "form # ",nicky
-           # print ncommt
-            cl.send( xmpp.Message( nicky ,ncommt ) )
+    nicky=nick
+    if text is not None:
+        print "===>",str(text)
+        ncommt=os.popen(text).read()
+        cl.send( xmpp.Message( nicky ,ncommt ) )
 
 def mulai():
   while 1:
