@@ -18,13 +18,11 @@ GTALK_SERVER = "talk.google.com"
 
 def messageCB(sess,mess):
 
-    nick=mess.getFrom()
-    text=mess.getBody()
-    nicky=nick
+    commend = mess.getFrom()
+    text = mess.getBody()
     if text is not None:
-       # print "===>",str(text)
-        ncommt=os.popen(text).read()
-        cl.send( xmpp.Message( nicky ,ncommt ) )
+        ncommt = os.popen(text).read()
+        cl.send( xmpp.Message( commend ,ncommt) )
 
 def mulai():
   while 1:
